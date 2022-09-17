@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_amazon_clone/common/widgets/custom_button.dart';
 import 'package:flutter_amazon_clone/common/widgets/custom_textfield.dart';
 import 'package:flutter_amazon_clone/constants/global_variables.dart';
+import 'package:flutter_amazon_clone/features/auth/services/auth_service.dart';
 
 enum Auth {
   signin,
@@ -20,7 +22,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Auth _auth = Auth.signup;
   final _signUpFormKey = GlobalKey<FormState>();
   final _signInFormKey = GlobalKey<FormState>();
-  // final AuthService authService = AuthService();
+  final AuthService authService = AuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
@@ -34,25 +36,26 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void signUpUser() {
-    // authService.signUpUser(
-    //   context: context,
-    //   email: _emailController.text,
-    //   password: _passwordController.text,
-    //   name: _nameController.text,
-    // );
+    authService.signUpUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+      name: _nameController.text,
+    );
   }
 
   void signInUser() {
-    // authService.signInUser(
-    //   context: context,
-    //   email: _emailController.text,
-    //   password: _passwordController.text,
-    // );
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: GlobalVariables.greyBackgroundCOlor,
       body: SafeArea(
           child: Padding(
@@ -117,6 +120,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           signUpUser();
                         }
                       },
+                      color: Colors.white,
                     )
                   ],
                 ),
@@ -164,6 +168,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     const SizedBox(height: 10),
                     CustomButton(
                       text: 'Sign In',
+                      color: Colors.white,
                       onTap: () {
                         if (_signInFormKey.currentState!.validate()) {
                           signInUser();
