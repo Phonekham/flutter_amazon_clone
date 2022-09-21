@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_amazon_clone/common/bottom_bar.dart';
+import 'package:flutter_amazon_clone/features/admin/screens/admin_screen.dart';
 import 'package:flutter_amazon_clone/features/auth/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -33,6 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<UserProvider>(context).user.type == 'user');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Amazon Clone',
@@ -50,7 +53,11 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true, // can remove this line
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: AuthScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? Provider.of<UserProvider>(context).user.type == 'user'
+              ? const BottomBar()
+              : const AdminScreen()
+          : const AuthScreen(),
     );
   }
 }
