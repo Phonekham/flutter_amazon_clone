@@ -7,7 +7,7 @@ import 'package:flutter_amazon_clone/features/auth/screens/auth_screens.dart';
 import 'package:flutter_amazon_clone/features/home/screens/category_deals_screen.dart';
 import 'package:flutter_amazon_clone/features/home/screens/home_screen.dart';
 import 'package:flutter_amazon_clone/features/order_details/screens/order_details.dart';
-import 'package:flutter_amazon_clone/features/product-details/screens/product_details_screen.dart';
+import 'package:flutter_amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:flutter_amazon_clone/features/search/screens/search_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
