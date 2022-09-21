@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class CartScreeen extends StatefulWidget {
-  const CartScreeen({super.key});
+class CartScreen extends StatefulWidget {
+  const CartScreen({super.key});
 
   @override
-  State<CartScreeen> createState() => _CartScreeenState();
+  State<CartScreen> createState() => _CartScreenState();
 }
 
-class _CartScreeenState extends State<CartScreeen> {
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
