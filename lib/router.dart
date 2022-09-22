@@ -9,6 +9,7 @@ import 'package:flutter_amazon_clone/features/home/screens/home_screen.dart';
 import 'package:flutter_amazon_clone/features/order_details/screens/order_details.dart';
 import 'package:flutter_amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:flutter_amazon_clone/features/search/screens/search_screen.dart';
+import 'package:flutter_amazon_clone/models/order.dart';
 import 'package:flutter_amazon_clone/models/product.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -68,12 +69,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         ),
       );
     case OrderDetailScreen.routeName:
-      // var order = routeSettings.arguments as Order;
+      var order = routeSettings.arguments as Order;
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => OrderDetailScreen(
-            // order: order,
-            ),
+          order: order,
+        ),
       );
     default:
       return MaterialPageRoute(

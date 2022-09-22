@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:flutter_amazon_clone/common/bottom_bar.dart';
 import 'package:flutter_amazon_clone/features/admin/screens/admin_screen.dart';
 import 'package:flutter_amazon_clone/features/auth/services/auth_service.dart';
-import 'package:provider/provider.dart';
-
 import 'package:flutter_amazon_clone/constants/global_variables.dart';
 import 'package:flutter_amazon_clone/features/auth/screens/auth_screens.dart';
 import 'package:flutter_amazon_clone/providers/user_provider.dart';
