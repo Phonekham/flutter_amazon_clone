@@ -9,6 +9,7 @@ import 'package:flutter_amazon_clone/features/home/screens/home_screen.dart';
 import 'package:flutter_amazon_clone/features/order_details/screens/order_details.dart';
 import 'package:flutter_amazon_clone/features/product_details/screens/product_details_screen.dart';
 import 'package:flutter_amazon_clone/features/search/screens/search_screen.dart';
+import 'package:flutter_amazon_clone/models/product.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
@@ -51,12 +52,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         ),
       );
     case ProductDetailScreen.routeName:
-      // var product = routeSettings.arguments as Product;
+      var product = routeSettings.arguments as Product;
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => ProductDetailScreen(
-            // product: product,
-            ),
+          product: product,
+        ),
       );
     case AddressScreen.routeName:
       var totalAmount = routeSettings.arguments as String;
